@@ -5,9 +5,9 @@ import requests
 import json
 from scipy import spatial
 
-model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
-print("Loaded model")
-index2word_set = set(model.wv.index2word)
+#model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
+#print("Loaded model")
+#index2word_set = set(model.wv.index2word)
 
 def avg_feature_vector(sentence, model, num_features, index2word_set):
     words = sentence.split()
@@ -119,5 +119,53 @@ def find_synonyms(word):
     return firsts[-3:]
 
 
-def all_regex(regex):
-    py_keywords = ['False',	'class', 'finally','is','return','None','continue','for','lambda','try','True',	'def','from','nonlocal','while','and','del','global','not',	'with','as','elif','if','or','yield','assert','else','import','pass','break','except','in','raise']
+def getReplacementsName(name):
+    #for each word in the name, get the replacements
+    words = make_list(name)
+    replace_dict = []
+    for w in words:
+        w_replacements = find_synonyms(w)
+        w_replacements.append(w)
+        w_replacements = list(set(w_replacements))
+        replace_dict.append(w_replacements)
+
+    a = replace_dict[0]
+    for b in replace_dict[1:]:
+        o = []
+        for ia in a:
+            for ib in b:
+                o.append(ia+"_"+ib)
+        a = o
+    ca = a.copy()
+    for poss in a:
+        ca.append(change_case(poss))
+    return ca
+
+def replaceFunctionNames(regex):
+    i = regex.find("def")
+    before = regex[:(i+4)]
+
+    i += 4
+    name = ""
+    while True:
+        name+=regex[i]
+        i+=1
+        if(not regex[i].isalpha() and not regex[i].isnumeric()):
+            break
+    after = regex[i:]
+
+    print(regex)
+    print(before)
+    print(name)
+    print(after)
+
+    names = getReplacementsName(name)
+    final_regex = regex
+    for n in names:
+        r = before + n
+        r = r + after
+        print(r)
+        final_regex += ' | ('+r+')'
+    return final_regex
+
+print(replaceFunctionNames('somestuff def addOne\(\): func'))
