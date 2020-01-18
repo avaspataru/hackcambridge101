@@ -5,9 +5,14 @@ import requests
 import json
 from scipy import spatial
 
-#model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
-#print("Loaded model")
-#index2word_set = set(model.wv.index2word)
+#for now
+data = [{'repo_url':'url1','file_url':'url01','line_num':1, 'content':'def addOneT()'},
+    {'repo_url':'url2','file_url':'url02','line_num':2, 'content':'def changeName()'}
+]
+
+model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
+print("Loaded model")
+index2word_set = set(model.wv.index2word)
 
 def avg_feature_vector(sentence, model, num_features, index2word_set):
     words = sentence.split()
@@ -141,7 +146,8 @@ def getReplacementsName(name):
         ca.append(change_case(poss))
     return ca
 
-def replaceFunctionNames(regex):
+
+def extractName(regex):
     i = regex.find("def")
     before = regex[:(i+4)]
 
@@ -153,11 +159,13 @@ def replaceFunctionNames(regex):
         if(not regex[i].isalpha() and not regex[i].isnumeric()):
             break
     after = regex[i:]
+    return before, name, after
 
-    print(regex)
-    print(before)
-    print(name)
-    print(after)
+def replaceFunctionNames(regex):
+
+    if(regex.find("def") == -1): #has no function def
+        return regex
+    before,name,after = extractName(regex)
 
     names = getReplacementsName(name)
     final_regex = regex
@@ -165,7 +173,34 @@ def replaceFunctionNames(regex):
         r = before + n
         r = r + after
         print(r)
-        final_regex += ' | ('+r+')'
+        final_regex += '|('+r+')'
     return final_regex
 
-print(replaceFunctionNames('somestuff def addOne\(\): func'))
+
+
+def lookup(regex):
+    #nothing to do
+    if(regex.find("def") == -1):
+        return regex
+
+    #fast search
+    fast_regex = ""
+    found = False
+    r_before,r_def,r_after = extractName(regex)
+    r = make_sentence(make_list(r_def))
+    for d in data:
+        d_before,d_def,d_after = extractName(d['content'])
+        score = similarity_sentences(make_sentence(make_list(d_def)),r)
+        print(d_def,score)
+        if(score > 0.7):
+            fast_regex += '|('+d_before+d_def+d_after+')'
+            found = True
+    if(found):
+        return fast_regex[1:]
+
+    #look for the synonyms
+    r = replaceFunctionNames(regex)
+    return r
+
+print(lookup('somestuff def addOne\(\): func'))
+#print(replaceFunctionNames('somestuff def addOne\(\): func'))
