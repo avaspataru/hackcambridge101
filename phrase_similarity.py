@@ -5,10 +5,12 @@ import requests
 import json
 from scipy import spatial
 
-#for now
-data = [{'repo_url':'url1','file_url':'url01','line_num':1, 'content':'def add_one_t\(\)'},
-    {'repo_url':'url2','file_url':'url02','line_num':2, 'content':'def changeName\(\)'}
-]
+data = []
+with open('./avas_list.txt') as inputfile:
+    for line in inputfile:
+        data.append(line)
+
+print("Loaded function data")
 
 model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
 print("Loaded model")
@@ -195,9 +197,9 @@ def lookup(regex):
 
     r = make_sentence(make_list(r_def))
     for d in data:
-        d_before,d_def,d_after = extractName(d['content'])
+        d_before,d_def,d_after = extractName(d)
         score = similarity_sentences(make_sentence(make_list(d_def)),r)
-        print(d_def,score)
+        #print(d_def,score)
         if(score > 0.7):
             fast_regex += '|('+d_before+d_def+d_after+')'
             found = True
@@ -208,7 +210,7 @@ def lookup(regex):
     r = replaceFunctionNames(regex)
     return r
 
-#print(lookup('somestuff def addOne\(\): func'))
-#print(lookup('somestuff def [a-z]*: func'))
-#print(lookup('somestuff def add_one: func'))
+#print(lookup('somestuff def base64ToInt\([a-z]*\): func'))
+#print(lookup('somestuff def checkErr: func'))
+#print(lookup('somestuff def add_one[a-z]*: func'))
 #print(replaceFunctionNames('somestuff def addOne\(\): func'))

@@ -1,0 +1,1499 @@
+def _get_locale_dirs(resources, include_core=True):
+def _tx_resource_for_name(name):
+def _check_diff(cat_name, base_path):
+def update_catalogs(resources=None, languages=None):
+def lang_stats(resources=None, languages=None):
+def fetch(resources=None, languages=None):
+def setup(app):
+def parse_django_admin_node(env, sig, signode):
+def visit_console_dummy(self, node):
+def depart_console_dummy(self, node):
+def visit_console_html(self, node):
+def html_page_context_hook(app, pagename, templatename, context, doctree):
+def setup(set_prefix=True):
+def render(request, template_name, context=None, content_type=None, status=None, using=None):
+def redirect(to, *args, permanent=False, **kwargs):
+def _get_queryset(klass):
+def get_object_or_404(klass, *args, **kwargs):
+def get_list_or_404(klass, *args, **kwargs):
+def resolve_url(to, *args, **kwargs):
+def parse_cookie(cookie):
+def bytes_to_text(s, encoding):
+def split_domain_port(host):
+def validate_host(host, allowed_hosts):
+def exhaust(stream_or_iterable):
+def parse_boundary_stream(stream, max_header_size):
+def parse_header(line):
+def _parse_header_params(s):
+def deconstructible(*args, path=None):
+def import_string(dotted_path):
+def autodiscover_modules(*args, **kwargs):
+def module_has_submodule(package, module_name):
+def module_dir(module):
+def reset_format_cache():
+def iter_format_modules(lang, format_module_path=None):
+def get_format_modules(lang=None, reverse=False):
+def get_format(format_type, lang=None, use_l10n=None):
+def date_format(value, format=None, use_l10n=None):
+def time_format(value, format=None, use_l10n=None):
+def number_format(value, decimal_pos=None, use_l10n=None, force_grouping=False):
+def localize(value, use_l10n=None):
+def localize_input(value, default=None):
+def sanitize_separators(value):
+def _update_method_wrapper(_wrapper, decorator):
+def _multi_decorate(decorators, method):
+def method_decorator(decorator, name=''):
+def decorator_from_middleware_with_args(middleware_class):
+def decorator_from_middleware(middleware_class):
+def make_middleware_decorator(middleware_class):
+def format(number, decimal_sep, decimal_pos=None, grouping=0, thousand_sep='',
+def colorize(text='', opts=(), **kwargs):
+def make_style(opts=(), **kwargs):
+def parse_color_setting(config_string):
+def salted_hmac(key_salt, value, secret=None):
+def get_random_string(length=12,
+def constant_time_compare(val1, val2):
+def pbkdf2(password, salt, iterations, dklen=0, digest=None):
+def clean_ipv6_address(ip_str, unpack_ipv4=False,
+def is_valid_ipv6_address(ip_str):
+def extract(path, to_path):
+def patch_cache_control(response, **kwargs):
+def get_max_age(response):
+def set_response_etag(response):
+def _precondition_failed(request):
+def _not_modified(request, response=None):
+def get_conditional_response(request, etag=None, last_modified=None, response=None):
+def _if_match_passes(target_etag, etags):
+def _if_unmodified_since_passes(last_modified, if_unmodified_since):
+def _if_none_match_passes(target_etag, etags):
+def _if_modified_since_passes(last_modified, if_modified_since):
+def patch_response_headers(response, cache_timeout=None):
+def add_never_cache_headers(response):
+def patch_vary_headers(response, newheaders):
+def has_vary_header(response, header_query):
+def _i18n_cache_key_suffix(request, cache_key):
+def _generate_cache_key(request, method, headerlist, key_prefix):
+def _generate_cache_header_key(key_prefix, request):
+def get_cache_key(request, key_prefix=None, method='GET', cache=None):
+def learn_cache_key(request, response, cache_timeout=None, key_prefix=None, cache=None):
+def _to_tuple(s):
+def safe_join(base, *paths):
+def symlinks_supported():
+def to_path(value):
+def smart_str(s, encoding='utf-8', strings_only=False, errors='strict'):
+def is_protected_type(obj):
+def force_str(s, encoding='utf-8', strings_only=False, errors='strict'):
+def smart_bytes(s, encoding='utf-8', strings_only=False, errors='strict'):
+def force_bytes(s, encoding='utf-8', strings_only=False, errors='strict'):
+def smart_text(s, encoding='utf-8', strings_only=False, errors='strict'):
+def force_text(s, encoding='utf-8', strings_only=False, errors='strict'):
+def iri_to_uri(iri):
+def uri_to_iri(uri):
+def escape_uri_path(path):
+def punycode(domain):
+def repercent_broken_unicode(path):
+def filepath_to_uri(path):
+def get_system_encoding():
+def capfirst(x):
+def wrap(text, width):
+def get_valid_filename(s):
+def get_text_list(list_, last_word=gettext_lazy('or')):
+def normalize_newlines(text):
+def phone2numeric(phone):
+def compress_string(s):
+def compress_sequence(sequence):
+def smart_split(text):
+def _replace_entity(match):
+def unescape_entities(text):
+def unescape_string_literal(s):
+def slugify(value, allow_unicode=False):
+def camel_case_to_spaces(value):
+def _format_lazy(format_string, *args, **kwargs):
+def configure_logging(logging_config, logging_settings):
+def log_response(message, *args, response=None, request=None, logger=request_logger, level=None, exc_info=None):
+def _get_duration_components(duration):
+def duration_string(duration):
+def duration_iso_string(duration):
+def duration_microseconds(delta):
+def async_unsafe(message):
+def check_errors(fn):
+def raise_last_exception():
+def ensure_echo_on():
+def iter_all_python_module_files():
+def iter_modules_and_files(modules, extra_files):
+def common_roots(paths):
+def sys_path_directories():
+def get_child_arguments():
+def trigger_reload(filename):
+def restart_with_reloader():
+def get_reloader():
+def start_django(reloader, main_func, *args, **kwargs):
+def run_with_reloader(main_func, *args, **kwargs):
+def format(value, format_string):
+def time_format(value, format_string):
+def get_func_args(func):
+def get_func_full_args(func):
+def func_accepts_kwargs(func):
+def func_accepts_var_args(func):
+def method_has_no_args(meth):
+def func_supports_parameter(func, parameter):
+def normalize(pattern):
+def next_char(input_iter):
+def walk_to_end(ch, input_iter):
+def get_quantifier(ch, input_iter):
+def contains(source, inst):
+def flatten_result(source):
+def _lazy_re_compile(regex, flags=0):
+def new_date(d):
+def new_datetime(d):
+def _findall(text, substr):
+def strftime(dt, fmt):
+def parse_date(value):
+def parse_time(value):
+def parse_datetime(value):
+def parse_duration(value):
+def urlquote(url, safe='/'):
+def urlquote_plus(url, safe=''):
+def urlunquote(quoted_url):
+def urlunquote_plus(quoted_url):
+def urlencode(query, doseq=False):
+def http_date(epoch_seconds=None):
+def parse_http_date(date):
+def parse_http_date_safe(date):
+def base36_to_int(s):
+def int_to_base36(i):
+def urlsafe_base64_encode(s):
+def urlsafe_base64_decode(s):
+def parse_etags(etag_str):
+def quote_etag(etag_str):
+def is_same_domain(host, pattern):
+def url_has_allowed_host_and_scheme(url, allowed_hosts, require_https=False):
+def is_safe_url(url, allowed_hosts, require_https=False):
+def _urlparse(url, scheme='', allow_fragments=True):
+def _urlsplit(url, scheme='', allow_fragments=True):
+def _url_has_allowed_host_and_scheme(url, allowed_hosts, require_https=False):
+def limited_parse_qsl(qs, keep_blank_values=False, encoding='utf-8',
+def escape_leading_slashes(url):
+def get_fixed_timezone(offset):
+def get_default_timezone():
+def get_default_timezone_name():
+def get_current_timezone():
+def get_current_timezone_name():
+def _get_timezone_name(timezone):
+def activate(timezone):
+def deactivate():
+def template_localtime(value, use_tz=None):
+def localtime(value=None, timezone=None):
+def localdate(value=None, timezone=None):
+def now():
+def is_aware(value):
+def is_naive(value):
+def make_aware(value, timezone=None, is_dst=None):
+def make_naive(value, timezone=None):
+def _safety_decorator(safety_marker, func):
+def mark_safe(s):
+def lazy(func, *resultclasses):
+def _lazy_proxy_unpickle(func, args, kwargs, *resultclasses):
+def lazystr(text):
+def keep_lazy(*resultclasses):
+def keep_lazy_text(func):
+def new_method_proxy(func):
+def unpickle_lazyobject(wrapped):
+def partition(predicate, values):
+def make_hashable(value):
+def _destruct_iterable_mapping_values(data):
+def literals(choices, prefix="", suffix=""):
+def prepare_js_for_gettext(js):
+def sentence():
+def paragraph():
+def paragraphs(count, common=True):
+def words(count, common=True):
+def rfc2822_date(date):
+def rfc3339_date(date):
+def get_tag_uri(url, date):
+def topological_sort_as_sets(dependency_graph):
+def stable_topological_sort(l, dependency_graph):
+def escape(text):
+def escapejs(value):
+def json_script(value, element_id):
+def conditional_escape(text):
+def format_html(format_string, *args, **kwargs):
+def format_html_join(sep, format_string, args_generator):
+def linebreaks(value, autoescape=False):
+def _strip_once(value):
+def strip_tags(value):
+def strip_spaces_between_tags(value):
+def smart_urlquote(url):
+def urlize(text, trim_url_limit=None, nofollow=False, autoescape=False):
+def avoid_wrapping(value):
+def html_safe(klass):
+def get_version(version=None):
+def get_main_version(version=None):
+def get_complete_version(version=None):
+def get_docs_version(version=None):
+def get_git_changeset():
+def get_version_tuple(version):
+def is_iterable(x):
+def timesince(d, now=None, reversed=False, time_strings=None):
+def timeuntil(d, now=None, time_strings=None):
+def gettext_noop(message):
+def ugettext_noop(message):
+def gettext(message):
+def ugettext(message):
+def ngettext(singular, plural, number):
+def ungettext(singular, plural, number):
+def pgettext(context, message):
+def npgettext(context, singular, plural, number):
+def ugettext_lazy(message):
+def lazy_number(func, resultclass, number=None, **kwargs):
+def _lazy_number_unpickle(func, resultclass, number, kwargs):
+def ngettext_lazy(singular, plural, number=None):
+def ungettext_lazy(singular, plural, number=None):
+def npgettext_lazy(context, singular, plural, number=None):
+def activate(language):
+def deactivate():
+def get_language():
+def get_language_bidi():
+def check_for_language(lang_code):
+def to_language(locale):
+def to_locale(language):
+def get_language_from_request(request, check_path=False):
+def get_language_from_path(path):
+def get_supported_language_variant(lang_code, *, strict=False):
+def templatize(src, **kwargs):
+def deactivate_all():
+def get_language_info(lang_code):
+def trim_whitespace(s):
+def round_away_from_one(value):
+def reset_cache(**kwargs):
+def translation(language):
+def activate(language):
+def deactivate():
+def deactivate_all():
+def get_language():
+def get_language_bidi():
+def catalog():
+def gettext(message):
+def pgettext(context, message):
+def gettext_noop(message):
+def do_ntranslate(singular, plural, number, translation_function):
+def ngettext(singular, plural, number):
+def npgettext(context, singular, plural, number):
+def all_locale_paths():
+def check_for_language(lang_code):
+def get_languages():
+def get_supported_language_variant(lang_code, strict=False):
+def get_language_from_path(path, strict=False):
+def get_language_from_request(request, check_path=False):
+def parse_accept_lang_header(lang_string):
+def gettext(message):
+def ngettext(singular, plural, number):
+def pgettext(context, message):
+def npgettext(context, singular, plural, number):
+def activate(x):
+def deactivate():
+def get_language():
+def get_language_bidi():
+def check_for_language(x):
+def get_language_from_request(request, check_path=False):
+def get_language_from_path(request):
+def get_supported_language_variant(lang_code, strict=False):
+def watch_for_translation_changes(sender, **kwargs):
+def translation_file_changed(sender, file_path, **kwargs):
+def blankout(src, char):
+def templatize(src, origin=None):
+def _make_id(target):
+def receiver(signal, **kwargs):
+def do_get_available_languages(parser, token):
+def do_get_language_info(parser, token):
+def do_get_language_info_list(parser, token):
+def language_name(lang_code):
+def language_name_translated(lang_code):
+def language_name_local(lang_code):
+def language_bidi(lang_code):
+def do_get_current_language(parser, token):
+def do_get_current_language_bidi(parser, token):
+def do_translate(parser, token):
+def do_block_translate(parser, token):
+def language(parser, token):
+def do_cache(parser, token):
+def localize(value):
+def unlocalize(value):
+def localize_tag(parser, token):
+def localtime(value):
+def utc(value):
+def do_timezone(value, arg):
+def localtime_tag(parser, token):
+def timezone_tag(parser, token):
+def get_current_timezone_tag(parser, token):
+def get_static_prefix(parser, token):
+def get_media_prefix(parser, token):
+def do_static(parser, token):
+def static(path):
+def add_domain(domain, url, secure=False):
+def _simple_domain_name_validator(value):
+def clear_site_cache(sender, **kwargs):
+def create_default_site(app_config, verbosity=2, interactive=True, using=DEFAULT_DB_ALIAS, apps=global_apps, **kwargs):
+def get_current_site(request):
+def pretty_name(obj):
+def feed(request, url, feed_dict=None):
+def compress_kml(kml):
+def render_to_kml(*args, **kwargs):
+def render_to_kmz(*args, **kwargs):
+def mapping(data_source, geom_name='geom', layer_key=0, multi_geom=False):
+def ogrinspect(*args, **kwargs):
+def _ogrinspect(data_source, model_name, geom_name='geom', layer_key=0, srid=None,
+def add_srs_entry(srs, auth_name='EPSG', auth_srid=None, ref_sys_name=None,
+def ogrinfo(data_source, num_features=10):
+def fromfile(file_h):
+def fromstr(string, **kwargs):
+def load_geos():
+def notice_h(fmt, lst):
+def error_h(fmt, lst):
+def geos_version():
+def geos_version_tuple():
+def last_arg_byref(args):
+def check_dbl(result, func, cargs):
+def check_geom(result, func, cargs):
+def check_minus_one(result, func, cargs):
+def check_predicate(result, func, cargs):
+def check_sized_string(result, func, cargs):
+def check_string(result, func, cargs):
+def check_cs_op(result, func, cargs):
+def check_cs_get(result, func, cargs):
+def wkt_r():
+def wkt_w(dim=2, trim=False, precision=None):
+def wkb_r():
+def wkb_w(dim=2):
+def ewkb_w(dim=2):
+def std_call(func):
+def gdal_version():
+def gdal_full_version():
+def gdal_version_info():
+def err_handler(error_class, error_number, message):
+def function(name, args, restype):
+def check_err(code, cpl=False):
+def arg_byref(args, offset=-1):
+def ptr_byref(args, offset=-1):
+def check_const_string(result, func, cargs, offset=None, cpl=False):
+def check_string(result, func, cargs, offset=-1, str_result=False):
+def check_envelope(result, func, cargs, offset=-1):
+def check_geom(result, func, cargs):
+def check_geom_offset(result, func, cargs, offset=-1):
+def check_srs(result, func, cargs):
+def check_arg_errcode(result, func, cargs, cpl=False):
+def check_errcode(result, func, cargs, cpl=False):
+def check_pointer(result, func, cargs):
+def check_str_arg(result, func, cargs):
+def bool_output(func, argtypes, errcheck=None):
+def double_output(func, argtypes, errcheck=False, strarg=False, cpl=False):
+def geom_output(func, argtypes, offset=None):
+def int_output(func, argtypes, errcheck=None):
+def int64_output(func, argtypes):
+def srs_output(func, argtypes):
+def const_string_output(func, argtypes, offset=None, decoding=None, cpl=False):
+def string_output(func, argtypes, offset=-1, str_result=False, decoding=None):
+def void_output(func, argtypes, errcheck=True, cpl=False):
+def voidptr_output(func, argtypes, errcheck=True):
+def chararray_output(func, argtypes, errcheck=True):
+def env_func(f, argtypes):
+def pnt_func(f):
+def topology_func(f):
+def srs_double(f):
+def units_func(f):
+def kml(request, label, model, field_name=None, compress=False, using=DEFAULT_DB_ALIAS):
+def kmz(request, label, model, field_name=None, using=DEFAULT_DB_ALIAS):
+def get_srid_info(srid, connection):
+def pack(structure, data):
+def unpack(structure, data):
+def chunk(data, index):
+def from_pgraster(data):
+def to_pgraster(rast):
+def City(response):
+def Country(response):
+def flatpage(request, url):
+def render_flatpage(request, f):
+def get_flatpages(parser, token):
+def ordinal(value):
+def intcomma(value, use_l10n=True):
+def intword(value):
+def apnumber(value):
+def naturalday(value, arg=None):
+def naturaltime(value):
+def get_hstore_oids(connection_alias):
+def get_citext_oids(connection_alias):
+def register_type_handlers(connection, **kwargs):
+def prefix_validation_error(error, prefix, code, params):
+def uninstall_if_needed(setting, value, enter, **kwargs):
+def get_content_type_for_model(obj):
+def get_ul_class(radio_style):
+def autodiscover():
+def register(*models, site=None):
+def delete_selected(modeladmin, request, queryset):
+def lookup_needs_distinct(opts, lookup_path):
+def prepare_lookup_value(key, value):
+def quote(s):
+def unquote(s):
+def flatten(fields):
+def flatten_fieldsets(fieldsets):
+def get_deleted_objects(objs, request, admin_site):
+def model_format_dict(obj):
+def model_ngettext(obj, n=None):
+def lookup_field(name, obj, model_admin=None):
+def _get_non_gfk_field(opts, name):
+def label_for_field(name, model, model_admin=None, return_attr=False, form=None):
+def help_text_for_field(name, model):
+def display_for_field(value, field, empty_value_display):
+def display_for_value(value, empty_value_display, boolean=False):
+def get_model_from_relation(field):
+def reverse_field_path(model, path):
+def get_fields_from_path(model, path):
+def construct_change_message(form, formsets, add):
+def _get_changed_field_labels_from_form(form, changed_data):
+def url_params_from_lookup_dict(lookups):
+def _issubclass(cls, classinfo):
+def _contains_subclass(class_path, candidate_paths):
+def check_admin_app(app_configs, **kwargs):
+def check_dependencies(**kwargs):
+def must_be(type, option, obj, id):
+def must_inherit_from(parent, option, obj, id):
+def refer_to_missing_field(field, option, obj, id):
+def paginator_number(cl, i):
+def pagination(cl):
+def pagination_tag(parser, token):
+def result_headers(cl):
+def _boolean_icon(field_val):
+def _coerce_field_name(field_name, field_index):
+def items_for_result(cl, result, form):
+def results(cl):
+def result_hidden_fields(cl):
+def result_list(cl):
+def result_list_tag(parser, token):
+def date_hierarchy(cl):
+def date_hierarchy_tag(parser, token):
+def search_form(cl):
+def search_form_tag(parser, token):
+def admin_list_filter(cl, spec):
+def admin_actions(context):
+def admin_actions_tag(parser, token):
+def change_list_object_tools_tag(parser, token):
+def get_admin_log(parser, token):
+def prepopulated_fields_js(context):
+def prepopulated_fields_js_tag(parser, token):
+def submit_row(context):
+def submit_row_tag(parser, token):
+def change_form_object_tools_tag(parser, token):
+def cell_count(inline_admin_form):
+def admin_urlname(value, arg):
+def admin_urlquote(value):
+def add_preserved_filters(context, url, popup=False, to_field=None):
+def staff_member_required(view_func=None, redirect_field_name=REDIRECT_FIELD_NAME,
+def main():
+def serve(request, path, insecure=False, **kwargs):
+def matches_patterns(path, patterns=None):
+def get_files(storage, ignore_patterns=None, location=''):
+def check_settings(base_url=None):
+def check_finders(app_configs=None, **kwargs):
+def find(path, all=False):
+def get_finders():
+def get_finder(import_path):
+def staticfiles_urlpatterns(prefix=None):
+def get_return_data_type(func_name):
+def get_readable_field_data_type(field):
+def extract_views_from_urlpatterns(urlpatterns, base='', namespace=None):
+def simplify_regex(pattern):
+def get_view_name(view_func):
+def parse_docstring(docstring):
+def parse_rst(text, default_reference_context, thing_being_parsed=None):
+def create_reference_role(rolename, urlbase):
+def default_reference_role(name, rawtext, text, lineno, inliner, options=None, content=None):
+def replace_named_groups(pattern):
+def replace_unnamed_groups(pattern):
+def ping_google(sitemap_url=None, ping_url=PING_URL, sitemap_uses_https=True):
+def _get_sitemap_full_url(sitemap_url, sitemap_uses_https=True):
+def x_robots_tag(func):
+def index(request, sitemaps,
+def sitemap(request, sitemaps, section=None,
+def update_last_login(sender, user, **kwargs):
+def _user_get_permissions(user, obj, from_name):
+def _user_has_perm(user, perm, obj):
+def _user_has_module_perms(user, app_label):
+def load_backend(path):
+def _get_backends(return_tuples=False):
+def get_backends():
+def _clean_credentials(credentials):
+def _get_user_session_key(request):
+def authenticate(request=None, **credentials):
+def login(request, user, backend=None):
+def logout(request):
+def get_user_model():
+def get_user(request):
+def get_permission_codename(action, opts):
+def update_session_auth_hash(request, user):
+def user_passes_test(test_func, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME):
+def login_required(function=None, redirect_field_name=REDIRECT_FIELD_NAME, login_url=None):
+def permission_required(perm, login_url=None, raise_exception=False):
+def get_user(request):
+def logout_then_login(request, login_url=None):
+def redirect_to_login(next, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME):
+def auth(request):
+def _unicode_ci_compare(s1, s2):
+def check_user_model(app_configs=None, **kwargs):
+def check_models_permissions(app_configs=None, **kwargs):
+def get_default_password_validators():
+def get_password_validators(validator_config):
+def validate_password(password, user=None, password_validators=None):
+def password_changed(password, user=None, password_validators=None):
+def password_validators_help_texts(password_validators=None):
+def _password_validators_help_text_html(password_validators=None):
+def is_password_usable(encoded):
+def check_password(password, encoded, setter=None, preferred='default'):
+def make_password(password, salt=None, hasher='default'):
+def get_hashers():
+def get_hashers_by_algorithm():
+def reset_hashers(**kwargs):
+def get_hasher(algorithm='default'):
+def identify_hasher(encoded):
+def mask_hash(hash, show=6, char="*"):
+def update_proxy_model_permissions(apps, schema_editor, reverse=False):
+def revert_proxy_model_permissions(apps, schema_editor):
+def _get_all_permissions(opts):
+def _get_builtin_permissions(opts):
+def create_permissions(app_config, verbosity=2, interactive=True, using=DEFAULT_DB_ALIAS, apps=global_apps, **kwargs):
+def get_system_username():
+def get_default_username(check_db=True):
+def check_password(environ, username, password):
+def groups_for_user(environ, username):
+def get_level_tags():
+def messages(request):
+def add_message(request, level, message, extra_tags='', fail_silently=False):
+def get_messages(request):
+def get_level(request):
+def set_level(request, level):
+def debug(request, message, extra_tags='', fail_silently=False):
+def info(request, message, extra_tags='', fail_silently=False):
+def success(request, message, extra_tags='', fail_silently=False):
+def warning(request, message, extra_tags='', fail_silently=False):
+def error(request, message, extra_tags='', fail_silently=False):
+def default_storage(request):
+def create_generic_related_manager(superclass, rel):
+def shortcut(request, content_type_id, object_id):
+def generic_inlineformset_factory(model, form=ModelForm,
+def check_generic_foreign_keys(app_configs=None, **kwargs):
+def check_model_name_lengths(app_configs=None, **kwargs):
+def add_legacy_name(apps, schema_editor):
+def inject_rename_contenttypes_operations(plan=None, apps=global_apps, using=DEFAULT_DB_ALIAS, **kwargs):
+def get_contenttypes_and_models(app_config, using, ContentType):
+def create_contenttypes(app_config, verbosity=2, interactive=True, using=DEFAULT_DB_ALIAS, apps=global_apps, **kwargs):
+def set_language(request):
+def get_formats():
+def technical_500_response(request, exc_type, exc_value, tb, status_code=500):
+def get_default_exception_reporter_filter():
+def get_exception_reporter_filter(request):
+def get_exception_reporter_class(request):
+def technical_404_response(request, exception):
+def default_urlconf(request):
+def csrf_failure(request, reason="", template_name=CSRF_FAILURE_TEMPLATE_NAME):
+def page_not_found(request, exception, template_name=ERROR_404_TEMPLATE_NAME):
+def server_error(request, template_name=ERROR_500_TEMPLATE_NAME):
+def bad_request(request, exception, template_name=ERROR_400_TEMPLATE_NAME):
+def permission_denied(request, exception, template_name=ERROR_403_TEMPLATE_NAME):
+def serve(request, path, document_root=None, show_indexes=False):
+def directory_index(path, fullpath):
+def was_modified_since(header=None, mtime=0, size=0):
+def _date_from_string(year, year_format, month='', month_format='', day='', day_format='', delim='__'):
+def _get_next_prev(generic_view, date, is_previous, period):
+def timezone_today():
+def cache_page(timeout, *, cache=None, key_prefix=None):
+def cache_control(**kwargs):
+def never_cache(view_func):
+def xframe_options_deny(view_func):
+def xframe_options_sameorigin(view_func):
+def xframe_options_exempt(view_func):
+def sensitive_variables(*variables):
+def sensitive_post_parameters(*parameters):
+def csrf_exempt(view_func):
+def require_http_methods(request_method_list):
+def condition(etag_func=None, last_modified_func=None):
+def etag(etag_func):
+def last_modified(last_modified_func):
+def vary_on_headers(*headers):
+def vary_on_cookie(func):
+def clear_cache_handlers(**kwargs):
+def update_installed_apps(**kwargs):
+def update_connections_time_zone(**kwargs):
+def clear_routers_cache(**kwargs):
+def reset_template_engines(**kwargs):
+def clear_serializers_cache(**kwargs):
+def language_changed(**kwargs):
+def localize_settings_changed(**kwargs):
+def file_storage_changed(**kwargs):
+def complex_setting_changed(**kwargs):
+def root_urlconf_changed(**kwargs):
+def static_storage_changed(**kwargs):
+def static_finders_changed(**kwargs):
+def auth_password_validators_changed(**kwargs):
+def user_model_swapped(**kwargs):
+def closing_iterator_wrapper(iterable, close):
+def conditional_content_removal(request, response):
+def store_rendered_templates(store, signal, sender, template, context, **kwargs):
+def encode_multipart(boundary, data):
+def encode_file(boundary, key, file):
+def instrumented_test_render(self, context):
+def setup_test_environment(debug=None):
+def teardown_test_environment():
+def setup_databases(verbosity, interactive, keepdb=False, debug_sql=False, parallel=0, aliases=None, **kwargs):
+def dependency_ordered(test_databases, dependencies):
+def get_unique_databases_and_mirrors(aliases=None):
+def teardown_databases(old_config, verbosity, parallel=0, keepdb=False):
+def get_runner(settings, test_runner_class=None):
+def compare_xml(want, got):
+def extend_sys_path(*paths):
+def isolate_lru_cache(lru_cache_object):
+def captured_output(stream_name):
+def captured_stdout():
+def captured_stderr():
+def captured_stdin():
+def freeze_time(t):
+def require_jinja2(test_func):
+def tag(*tags):
+def register_lookup(field, *lookups, lookup_name=None):
+def to_list(value):
+def assert_and_parse_html(self, html, user_msg, msg):
+def connections_support_transactions(aliases=None):
+def _deferredSkip(condition, reason, name):
+def skipIfDBFeature(*features):
+def skipUnlessDBFeature(*features):
+def skipUnlessAnyDBFeature(*features):
+def normalize_whitespace(string):
+def parse_html(html):
+def default_test_processes():
+def _init_worker(counter):
+def _run_subsuite(args):
+def is_discoverable(label):
+def reorder_suite(suite, classes, reverse=False):
+def partition_suite_by_type(suite, classes, bins, reverse=False):
+def partition_suite_by_case(suite):
+def filter_tests_by_tags(suite, tags, exclude_tags):
+def reset_queries(**kwargs):
+def close_old_connections(**kwargs):
+def load_backend(backend_name):
+def get_connection(using=None):
+def get_autocommit(using=None):
+def set_autocommit(autocommit, using=None):
+def commit(using=None):
+def rollback(using=None):
+def savepoint(using=None):
+def savepoint_rollback(sid, using=None):
+def savepoint_commit(sid, using=None):
+def clean_savepoints(using=None):
+def get_rollback(using=None):
+def set_rollback(rollback, using=None):
+def mark_for_rollback_on_error(using=None):
+def on_commit(func, using=None):
+def atomic(using=None, savepoint=True):
+def _non_atomic_requests(view, using):
+def non_atomic_requests(using=None):
+def swappable_dependency(value):
+def get_migration_name_timestamp():
+def serializer_factory(value):
+def _get_app_label_and_model_name(model, app_label=''):
+def _get_related_models(m):
+def get_related_models_tuples(model):
+def get_related_models_recursive(model):
+def _check_for_duplicates(arg_name, objs):
+def is_referenced_by_foreign_key(state, model_name_lower, field, field_name):
+def field_references_model(field, model_tuple):
+def normalize_together(option_together):
+def make_immutable_fields_list(name, data):
+def subclass_exception(name, bases, module, attached_to):
+def _has_contribute_to_class(value):
+def method_set_order(self, ordered_obj, id_list, using=None):
+def method_get_order(self, ordered_obj):
+def make_foreign_order_accessors(model, related_model):
+def model_unpickle(model_id):
+def make_model_tuple(model):
+def resolve_callables(mapping):
+def subclasses(cls):
+def select_related_descend(field, restricted, requested, load_fields, reverse=False):
+def refs_expression(lookup_parts, annotations):
+def check_rel_lookup_compatibility(model, target_opts, field):
+def normalize_prefetch_lookups(lookups, prefix=None):
+def prefetch_related_objects(model_instances, *related_lookups):
+def get_prefetcher(instance, through_attr, to_attr):
+def prefetch_one_level(instances, prefetcher, lookup, level):
+def get_related_populators(klass_info, select, db):
+def CASCADE(collector, field, sub_objs, using):
+def PROTECT(collector, field, sub_objs, using):
+def RESTRICT(collector, field, sub_objs, using):
+def SET(value):
+def SET_NULL(collector, field, sub_objs, using):
+def SET_DEFAULT(collector, field, sub_objs, using):
+def DO_NOTHING(collector, field, sub_objs, using):
+def get_candidate_relations_to_delete(opts):
+def get_normalized_value(value, lhs):
+def _load_field(app_label, model_name, field_name):
+def _empty(of_cls):
+def return_None():
+def resolve_relation(scope_model, relation):
+def lazy_related_operation(function, model, *related_models, **kwargs):
+def create_many_to_many_intermediary_model(field, klass):
+def create_reverse_many_to_one_manager(superclass, rel):
+def create_forward_many_to_many_manager(superclass, rel, reverse):
+def get_field_names_from_opts(opts):
+def get_children_from_q(q):
+def get_order_dir(field, default='ASC'):
+def add_to_dict(data, key, value):
+def is_reverse_o2o(field):
+def cursor_iter(cursor, sentinel, col_count, itersize):
+def typecast_date(s):
+def typecast_time(s):  # does NOT store time zone information
+def typecast_timestamp(s):  # does NOT store time zone information
+def split_identifier(identifier):
+def truncate_name(identifier, length=None, hash_len=4):
+def names_digest(*args, length):
+def format_number(value, max_digits, decimal_places):
+def strip_quotes(table_name):
+def _is_relevant_relation(relation, altered_field):
+def _all_related_fields(model):
+def _related_non_m2m_objects(old_field, new_field):
+def decoder(conv_func):
+def none_guard(func):
+def list_aggregate(function):
+def check_sqlite_version():
+def _sqlite_datetime_parse(dt, tzname=None, conn_tzname=None):
+def _sqlite_date_trunc(lookup_type, dt):
+def _sqlite_time_trunc(lookup_type, dt):
+def _sqlite_datetime_cast_date(dt, tzname, conn_tzname):
+def _sqlite_datetime_cast_time(dt, tzname, conn_tzname):
+def _sqlite_datetime_extract(lookup_type, dt, tzname=None, conn_tzname=None):
+def _sqlite_datetime_trunc(lookup_type, dt, tzname, conn_tzname):
+def _sqlite_time_extract(lookup_type, dt):
+def _sqlite_format_dtdelta(conn, lhs, rhs):
+def _sqlite_time_diff(lhs, rhs):
+def _sqlite_timestamp_diff(lhs, rhs):
+def _sqlite_regexp(re_pattern, re_string):
+def _sqlite_lpad(text, length, fill_text):
+def _sqlite_rpad(text, length, fill_text):
+def get_field_size(name):
+def complain(*args, **kwargs):
+def ignore(*args, **kwargs):
+def _setup_environment(environ):
+def wrap_oracle_errors():
+def psycopg2_version():
+def get_template(template_name, using=None):
+def select_template(template_name_list, using=None):
+def render_to_string(template_name, context=None, request=None, using=None):
+def _engine_list(using=None):
+def do_block(parser, token):
+def construct_relative_path(current_template_name, relative_name):
+def do_extends(parser, token):
+def do_include(parser, token):
+def linebreak_iter(template_source):
+def render_value_in_context(value, context):
+def token_kwargs(bits, parser, support_legacy=False):
+def make_context(context, request=None, **kwargs):
+def get_app_template_dirs(dirname):
+def autoescape(parser, token):
+def comment(parser, token):
+def cycle(parser, token):
+def csrf_token(parser, token):
+def debug(parser, token):
+def do_filter(parser, token):
+def firstof(parser, token):
+def do_for(parser, token):
+def do_ifequal(parser, token, negate):
+def ifequal(parser, token):
+def ifnotequal(parser, token):
+def do_if(parser, token):
+def ifchanged(parser, token):
+def find_library(parser, name):
+def load_from_library(library, label, names):
+def load(parser, token):
+def lorem(parser, token):
+def now(parser, token):
+def regroup(parser, token):
+def resetcycle(parser, token):
+def spaceless(parser, token):
+def templatetag(parser, token):
+def url(parser, token):
+def verbatim(parser, token):
+def widthratio(parser, token):
+def do_with(parser, token):
+def csrf(request):
+def debug(request):
+def i18n(request):
+def tz(request):
+def static(request):
+def media(request):
+def request(request):
+def stringfilter(func):
+def addslashes(value):
+def capfirst(value):
+def escapejs_filter(value):
+def json_script(value, element_id):
+def floatformat(text, arg=-1):
+def iriencode(value):
+def linenumbers(value, autoescape=True):
+def lower(value):
+def make_list(value):
+def slugify(value):
+def stringformat(value, arg):
+def title(value):
+def truncatechars(value, arg):
+def truncatechars_html(value, arg):
+def truncatewords(value, arg):
+def truncatewords_html(value, arg):
+def upper(value):
+def urlencode(value, safe=None):
+def urlize(value, autoescape=True):
+def urlizetrunc(value, limit, autoescape=True):
+def wordcount(value):
+def wordwrap(value, arg):
+def ljust(value, arg):
+def rjust(value, arg):
+def center(value, arg):
+def cut(value, arg):
+def escape_filter(value):
+def force_escape(value):
+def linebreaks_filter(value, autoescape=True):
+def linebreaksbr(value, autoescape=True):
+def safe(value):
+def safeseq(value):
+def striptags(value):
+def _property_resolver(arg):
+def dictsort(value, arg):
+def dictsortreversed(value, arg):
+def first(value):
+def join(value, arg, autoescape=True):
+def last(value):
+def length(value):
+def length_is(value, arg):
+def random(value):
+def slice_filter(value, arg):
+def unordered_list(value, autoescape=True):
+def add(value, arg):
+def get_digit(value, arg):
+def date(value, arg=None):
+def time(value, arg=None):
+def timesince_filter(value, arg=None):
+def timeuntil_filter(value, arg=None):
+def default(value, arg):
+def default_if_none(value, arg):
+def divisibleby(value, arg):
+def yesno(value, arg=None):
+def filesizeformat(bytes_):
+def pluralize(value, arg='s'):
+def phone2numeric_filter(value):
+def pprint(value):
+def infix(bp, func):
+def prefix(bp, func):
+def parse_bits(parser, bits, params, varargs, varkw, defaults,
+def import_library(name):
+def get_exception_info(exception):
+def csrf_input(request):
+def copy_exception(exc, backend=None):
+def reraise(exc, backend):
+def get_installed_libraries():
+def get_package_libraries(pkg):
+def validate_integer(value):
+def validate_ipv4_address(value):
+def validate_ipv6_address(value):
+def validate_ipv46_address(value):
+def ip_address_validators(protocol, unpack_ipv4):
+def int_list_validator(sep=',', message=None, code='invalid', allow_negative=False):
+def get_available_image_extensions():
+def validate_image_file_extension(value):
+def get_asgi_application():
+def b64_encode(s):
+def b64_decode(s):
+def base64_hmac(salt, value, key):
+def get_cookie_signer(salt='django.core.signing.get_cookie_signer'):
+def dumps(obj, key=None, salt='django.core.signing', serializer=JSONSerializer, compress=False):
+def loads(s, key=None, salt='django.core.signing', serializer=JSONSerializer, max_age=None):
+def get_wsgi_application():
+def find_commands(management_dir):
+def load_command_class(app_name, name):
+def get_commands():
+def call_command(command_name, *args, **options):
+def execute_from_command_line(argv=None):
+def handle_default_options(options):
+def no_translations(handle_func):
+def popen_wrapper(args, stdout_encoding='utf-8'):
+def handle_extensions(extensions):
+def find_command(cmd, path=None, pathext=None):
+def get_random_secret_key():
+def parse_apps_and_model_labels(labels):
+def get_command_line_option(argv, option):
+def normalize_path_patterns(patterns):
+def is_ignored_path(path, ignore_patterns):
+def supports_color():
+def make_style(config_string=''):
+def no_style():
+def color_style(force_color=False):
+def sql_flush(style, connection, only_django=False, reset_sequences=True, allow_cascade=False):
+def emit_pre_migrate_signal(verbosity, interactive, db, **kwargs):
+def emit_post_migrate_signal(verbosity, interactive, db, **kwargs):
+def check_programs(*programs):
+def normalize_eols(raw_contents):
+def write_pot_file(potfile, msgs):
+def module_to_dict(module, omittable=lambda k: k.startswith('_') or not k.isupper()):
+def humanize(dirname):
+def has_bom(fn):
+def is_writable(path):
+def _fd(f):
+def _samefile(src, dst):
+def file_move_safe(old_file_name, new_file_name, chunk_size=1024 * 64, allow_overwrite=False):
+def load_handler(path, *args, **kwargs):
+def endswith_cr(line):
+def endswith_lf(line):
+def equals_lf(line):
+def get_image_dimensions(file_or_path, close=False):
+def get_storage_class(import_path=None):
+def getInnerText(node):
+def register_serializer(format, serializer_module, serializers=None):
+def unregister_serializer(format):
+def get_serializer(format):
+def get_serializer_formats():
+def get_public_serializer_formats():
+def get_deserializer(format):
+def serialize(format, queryset, **options):
+def deserialize(format, stream_or_string, **options):
+def _load_serializers():
+def sort_dependencies(app_list):
+def Deserializer(stream_or_string, **options):
+def build_instance(Model, data, db):
+def deserialize_m2m_values(field, field_value, using, handle_forward_references):
+def deserialize_fk_value(field, field_value, using, handle_forward_references):
+def Deserializer(object_list, *, using=DEFAULT_DB_ALIAS, ignorenonexistent=False, **options):
+def _get_model(model_identifier):
+def Deserializer(stream_or_string, **options):
+def _create_cache(backend, **kwargs):
+def close_caches(**kwargs):
+def make_template_fragment_key(fragment_name, vary_on=None):
+def default_key_func(key, key_prefix, version):
+def get_key_func(key_func):
+def get_internal_wsgi_application():
+def is_broken_pipe_error():
+def run(addr, port, wsgi_handler, ipv6=False, threading=False, server_cls=WSGIServer):
+def get_connection(backend=None, fail_silently=False, **kwds):
+def send_mail(subject, message, from_email, recipient_list,
+def send_mass_mail(datatuple, fail_silently=False, auth_user=None,
+def mail_admins(subject, message, fail_silently=False, connection=None,
+def mail_managers(subject, message, fail_silently=False, connection=None,
+def forbid_multi_line_headers(name, val, encoding):
+def sanitize_address(addr, encoding):
+def check_setting_language_code(app_configs, **kwargs):
+def check_setting_languages(app_configs, **kwargs):
+def check_setting_languages_bidi(app_configs, **kwargs):
+def check_language_settings_consistent(app_configs, **kwargs):
+def check_setting_app_dirs_loaders(app_configs, **kwargs):
+def check_string_if_invalid_is_string(app_configs, **kwargs):
+def check_default_cache_is_configured(app_configs, **kwargs):
+def check_database_backends(*args, **kwargs):
+def check_url_config(app_configs, **kwargs):
+def check_resolver(resolver):
+def check_url_namespaces_unique(app_configs, **kwargs):
+def _load_all_namespaces(resolver, parents=()):
+def get_warning_for_invalid_pattern(pattern):
+def check_url_settings(app_configs, **kwargs):
+def E006(name):
+def check_all_models(app_configs=None, **kwargs):
+def _check_lazy_references(apps, ignore=None):
+def check_lazy_references(app_configs=None, **kwargs):
+def add_session_cookie_message(message):
+def add_httponly_message(message):
+def check_session_cookie_secure(app_configs, **kwargs):
+def check_session_cookie_httponly(app_configs, **kwargs):
+def _session_middleware():
+def _session_app():
+def _csrf_middleware():
+def check_csrf_middleware(app_configs, **kwargs):
+def check_csrf_cookie_secure(app_configs, **kwargs):
+def _security_middleware():
+def _xframe_middleware():
+def check_security_middleware(app_configs, **kwargs):
+def check_xframe_options_middleware(app_configs, **kwargs):
+def check_sts(app_configs, **kwargs):
+def check_sts_include_subdomains(app_configs, **kwargs):
+def check_sts_preload(app_configs, **kwargs):
+def check_content_type_nosniff(app_configs, **kwargs):
+def check_ssl_redirect(app_configs, **kwargs):
+def check_secret_key(app_configs, **kwargs):
+def check_debug(app_configs, **kwargs):
+def check_xframe_deny(app_configs, **kwargs):
+def check_allowed_hosts(app_configs, **kwargs):
+def check_referrer_policy(app_configs, **kwargs):
+def convert_exception_to_response(get_response):
+def response_for_exception(request, exc):
+def get_exception_response(request, resolver, status_code, exception):
+def handle_uncaught_exception(request, resolver, exc_info):
+def reset_urlconf(sender, **kwargs):
+def get_path_info(environ):
+def get_script_name(environ):
+def get_bytes_from_wsgi(environ, key, default):
+def get_str_from_wsgi(environ, key, default):
+def construct_instance(form, instance, fields=None, exclude=None):
+def model_to_dict(instance, fields=None, exclude=None):
+def apply_limit_choices_to_to_formfield(formfield):
+def fields_for_model(model, fields=None, exclude=None, widgets=None,
+def modelform_factory(model, form=ModelForm, fields=None, exclude=None,
+def modelformset_factory(model, form=ModelForm, formfield_callback=None,
+def _get_foreign_key(parent_model, model, fk_name=None, can_fail=False):
+def inlineformset_factory(parent_model, model, form=ModelForm,
+def modelform_defines_fields(form_class):
+def pretty_name(name):
+def flatatt(attrs):
+def from_current_timezone(value):
+def to_current_timezone(value):
+def media_property(cls):
+def boolean_check(v):
+def formset_factory(form, formset=BaseFormSet, extra=1, can_order=False,
+def all_valid(formsets):
+def get_default_renderer():
+def gettext_noop(s):
+def i18n_patterns(*urls, prefix_default_language=True):
+def is_language_prefix_patterns_used(urlconf):
+def url(regex, view, kwargs=None, name=None):
+def static(prefix, view=serve, **kwargs):
+def _get_failure_view():
+def _get_new_csrf_string():
+def _salt_cipher_secret(secret):
+def _unsalt_cipher_token(token):
+def _get_new_csrf_token():
+def get_token(request):
+def rotate_token(request):
+def _sanitize_token(token):
+def _compare_salted_tokens(request_csrf_token, csrf_token):
+def resolve(path, urlconf=None):
+def reverse(viewname, urlconf=None, args=None, kwargs=None, current_app=None):
+def clear_url_caches():
+def set_script_prefix(prefix):
+def get_script_prefix():
+def clear_script_prefix():
+def set_urlconf(urlconf_name):
+def get_urlconf(default=None):
+def is_valid_path(path, urlconf=None):
+def translate_url(url, lang_code):
+def include(arg, namespace=None):
+def _path(route, view, kwargs=None, name=None, Pattern=None):
+def get_callable(lookup_view):
+def get_mod_func(callback):
+def get_resolver(urlconf=None):
+def _get_cached_resolver(urlconf=None):
+def get_ns_resolver(ns_pattern, resolver, converters):
+def _route_to_regex(route, is_endpoint=False):
+def register_converter(converter, type_name):
+def get_converters():
+def get_converter(raw_converter):
+def get_test_modules():
+def get_installed():
+def setup(verbosity, test_labels, parallel, start_at, start_after):
+def teardown(state):
+def actual_test_processes(parallel):
+def django_tests(verbosity, interactive, failfast, keepdb, reverse,
+def get_subprocess_args(options):
+def bisect_tests(bisection_label, options, test_labels, parallel, start_at, start_after):
+def paired_tests(paired_test, options, test_labels, parallel, start_at, start_after):
+def render_view(request):
+def render_view_with_multiple_templates(request):
+def render_view_with_content_type(request):
+def render_view_with_status(request):
+def render_view_with_using(request):
+def inspectdb_tables_only(table_name):
+def special_table_only(table_name):
+def raise_error(apps, schema_editor):
+def grow_tail(x, y):
+def feed(x, y):
+def grow_tail(x, y):
+def shrink_tail(x, y):
+def raise_error(apps, schema_editor):
+def add_book(apps, schema_editor):
+def helloworld(request):
+def get_default_r():
+def create_a(name):
+def some_view(request):
+def get_view(request):
+def trace_view(request):
+def put_view(request):
+def post_view(request):
+def json_view(request):
+def view_with_header(request):
+def raw_post_view(request):
+def redirect_view(request):
+def _post_view_redirect(request, status_code):
+def method_saving_307_redirect_view(request):
+def method_saving_308_redirect_view(request):
+def view_with_secure(request):
+def double_redirect_view(request):
+def bad_view(request):
+def form_view(request):
+def form_view_with_template(request):
+def formset_view(request):
+def login_protected_view(request):
+def login_protected_view_changed_redirect(request):
+def _permission_protected_view(request):
+def session_view(request):
+def broken_view(request):
+def mail_sending_view(request):
+def mass_mail_sending_view(request):
+def nesting_exception_view(request):
+def django_project_redirect(request):
+def upload_view(request):
+def two_arg_exception(request):
+def _generic_view(request):
+def index_page(request):
+def with_parameter(request, parameter):
+def raises(request):
+def raises500(request):
+def raises400(request):
+def raises403(request):
+def raises404(request):
+def technical404(request):
+def template_exception(request):
+def jsi18n(request):
+def jsi18n_multi_catalogs(request):
+def raises_template_does_not_exist(request, path='i_dont_exist.html'):
+def render_no_template(request):
+def send_log(request, exc_info):
+def non_sensitive_view(request):
+def sensitive_view(request):
+def paranoid_view(request):
+def sensitive_args_function_caller(request):
+def sensitive_args_function(sauce):
+def sensitive_kwargs_function_caller(request):
+def sensitive_kwargs_function(sauce=None):
+def custom_exception_reporter_filter_view(request):
+def custom_reporter_class_view(request):
+def sensitive_method_view(request):
+def multivalue_dict_key_error(request):
+def json_response_view(request):
+def go_boom():
+def test_processor(request):
+def index(request):
+def client(request, id):
+def client_action(request, id, action):
+def client2(request, tag):
+def template_response_view(request):
+def snark(request):
+def setup(templates, *args, **kwargs):
+def annotated_tag_function(val: int):
+def echo(parser, token):
+def upper(value):
+def badtag(parser, token):
+def badsimpletag():
+def trim(value, num):
+def make_data_div(value):
+def noop(value, param=None):
+def context_stack_length(context):
+def no_params():
+def one_param(arg):
+def explicit_no_context(arg):
+def no_params_with_context(context):
+def params_and_context(context, arg):
+def simple_two_params(one, two):
+def simple_keyword_only_param(*, kwarg):
+def simple_keyword_only_default(*, kwarg=42):
+def simple_one_default(one, two='hi'):
+def simple_unlimited_args(one, two='hi', *args):
+def simple_only_unlimited_args(*args):
+def simple_unlimited_args_kwargs(one, two='hi', *args, **kwargs):
+def simple_tag_without_context_parameter(arg):
+def escape_naive(context):
+def escape_explicit(context):
+def escape_format_html(context):
+def current_app(context):
+def use_l10n(context):
+def minustwo_overridden_name(value):
+def counter(parser, token):
+def badtag(parser, token):
+def inclusion_no_params():
+def inclusion_no_params_from_template():
+def inclusion_one_param(arg):
+def inclusion_one_param_from_template(arg):
+def inclusion_explicit_no_context(arg):
+def inclusion_explicit_no_context_from_template(arg):
+def inclusion_no_params_with_context(context):
+def inclusion_no_params_with_context_from_template(context):
+def inclusion_params_and_context(context, arg):
+def inclusion_params_and_context_from_template(context, arg):
+def inclusion_two_params(one, two):
+def inclusion_two_params_from_template(one, two):
+def inclusion_one_default(one, two='hi'):
+def inclusion_keyword_only_default(*, kwarg=42):
+def inclusion_one_default_from_template(one, two='hi'):
+def inclusion_unlimited_args(one, two='hi', *args):
+def inclusion_unlimited_args_from_template(one, two='hi', *args):
+def inclusion_only_unlimited_args(*args):
+def inclusion_only_unlimited_args_from_template(*args):
+def inclusion_tag_use_l10n(context):
+def inclusion_unlimited_args_kwargs(one, two='hi', *args, **kwargs):
+def inclusion_tag_without_context_parameter(arg):
+def inclusion_extends1():
+def inclusion_extends2():
+def echo2(arg):
+def setup(templates, *args, **kwargs):
+def setup(templates, *args, **kwargs):
+def receiver_1_arg(val, **kwargs):
+def default_mode():
+def default_category():
+def today_callable_dict():
+def today_callable_q():
+def get_foo():
+def process_view(request):
+def make_function(input, toks):
+def make_function(js, c):
+def on_macos_with_hfs():
+def skip_unless_watchman_available():
+def factorial(n):
+def load_tests(loader, tests, ignore):
+def innocent(request):
+def redirect(request):
+def suspicious(request):
+def suspicious_spec(request):
+def uncaught_exception(request):
+def internal_server_error(request):
+def permission_denied(request):
+def multi_part_parser_error(request):
+def does_not_exist_raised(request):
+def dictConfig(config):
+def get_constraints(table):
+def add_level_messages(storage):
+def set_cookie_data(storage, messages, invalid=False, encode_empty=False):
+def stored_cookie_messages_count(storage, response):
+def set_session_data(storage, messages):
+def stored_session_messages_count(storage):
+def add(request, message_type):
+def add_template_response(request, message_type):
+def show(request):
+def show_template_response(request):
+def validate_answer_to_universe(value):
+def no_template_view(request):
+def staff_only_view(request):
+def get_view(request):
+def request_data(request, template='base.html', data='sausage'):
+def view_with_argument(request, name):
+def nested_view(request):
+def login_protected_redirect_view(request):
+def redirect_to_self_with_changing_query_view(request):
+def set_session_view(request):
+def check_session_view(request):
+def request_methods_view(request):
+def return_unicode(request):
+def return_undecodable_binary(request):
+def return_json_response(request):
+def return_json_response_latin1(request):
+def return_text_file(request):
+def check_headers(request):
+def body(request):
+def read_all(request):
+def read_buffer(request):
+def request_context_view(request):
+def render_template_multiple_times(request):
+def redirect_based_on_extra_headers_1_view(request):
+def redirect_based_on_extra_headers_2_view(request):
+def special(request):
+def select_by(dictlist, key, value):
+def test_mutation(raises=True):
+def skipUnlessGISLookup(*gis_lookups):
+def no_backend(test_func, backend):
+def no_oracle(func):
+def suite():
+def run(verbosity=2):
+def tuplize(seq):
+def strconvert(d):
+def get_ds_file(name, ext):
+def get_ogr_db_string():
+def api_get_distance(x):
+def api_get_buffer(x):
+def api_get_geom_typeid(x):
+def api_get_num_coords(x):
+def api_get_centroid(x):
+def api_get_empty(x):
+def api_get_valid(x):
+def api_get_simple(x):
+def api_get_ring(x):
+def api_get_boundary(x):
+def api_get_convex_hull(x):
+def api_get_extent(x):
+def api_get_area(x):
+def api_get_length(x):
+def nextRange(length):
+def my_check(app_configs, **kwargs):
+def simple_system_check(**kwargs):
+def tagged_system_check(**kwargs):
+def deployment_system_check(**kwargs):
+def custom_error_system_check(app_configs, **kwargs):
+def custom_warning_system_check(app_configs, **kwargs):
+def good_handler(request, exception=None, foo='bar'):
+def bad_handler():
+def assert_foo_contenttype_not_cached(apps, schema_editor):
+def empty_view(request, *args, **kwargs):
+def absolute_kwargs_view(request, arg1=1, arg2=2):
+def defaults_view(request, arg1, arg2):
+def nested_view(request):
+def erroneous_view(request):
+def pass_resolver_match_view(request, *args, **kwargs):
+def login_required_view(request):
+def bad_view(request, *args, **kwargs):
+def view(request):
+def view1(request):
+def view2(request):
+def inner_view(request):
+def post_form_view(request):
+def ensure_csrf_cookie_view(request):
+def token_view(request):
+def non_token_view_using_request_processor(request):
+def csrf_token_error_handler(request, **kwargs):
+def decorator(view):
+def _make_books(n, base_date):
+def prevent_deletes(sender, instance, **kwargs):
+def register_tests(test_class, method_name, test_func, exclude=()):
+def natural_key_serializer_test(self, format):
+def natural_key_test(self, format):
+def natural_pk_mti_test(self, format):
+def forward_ref_fk_test(self, format):
+def forward_ref_fk_with_error_test(self, format):
+def forward_ref_m2m_test(self, format):
+def forward_ref_m2m_with_error_test(self, format):
+def pk_with_default(self, format):
+def data_create(pk, klass, data):
+def generic_create(pk, klass, data):
+def fk_create(pk, klass, data):
+def m2m_create(pk, klass, data):
+def im2m_create(pk, klass, data):
+def im_create(pk, klass, data):
+def o2o_create(pk, klass, data):
+def pk_create(pk, klass, data):
+def inherited_create(pk, klass, data):
+def data_compare(testcase, pk, klass, data):
+def generic_compare(testcase, pk, klass, data):
+def fk_compare(testcase, pk, klass, data):
+def m2m_compare(testcase, pk, klass, data):
+def im2m_compare(testcase, pk, klass, data):
+def im_compare(testcase, pk, klass, data):
+def o2o_compare(testcase, pk, klass, data):
+def pk_compare(testcase, pk, klass, data):
+def inherited_compare(testcase, pk, klass, data):
+def serializerTest(self, format):
+def fully_decorated(request):
+def compose(*functions):
+def simple_dec(func):
+def myattr_dec(func):
+def myattr2_dec(func):
+def hashed_file_path(test, path):
+def sql_for_table(model):
+def sql_for_index(model):
+def empty_view(request, *args, **kwargs):
+def file_upload_view(request):
+def file_upload_view_verify(request):
+def file_upload_unicode_name(request):
+def file_upload_echo(request):
+def file_upload_echo_content(request):
+def file_upload_quota(request):
+def file_upload_quota_broken(request):
+def file_upload_getlist_count(request):
+def file_upload_errors(request):
+def file_upload_filename_case_view(request):
+def file_upload_content_type_extra(request):
+def file_upload_fd_closing(request, access):
+def get_max_column_name_length():
+def dummy_allow_migrate(db, app_label, **hints):
+def expensive_calculation():
+def f():
+def custom_key_func(key, key_prefix, version):
+def caches_setting_for_tests(base=None, exclude=None, **params):
+def hello_world_view(request, value):
+def csrf_view(request):
+def testmodelview(request, id):
+def create_path(filename):
+def extract_token_from_url(url):
+def get_perm(Model, perm):
+def mock_inputs(inputs):
+def remote_user_auth_view(request):
+def auth_processor_no_attr_access(request):
+def auth_processor_attr_access(request):
+def auth_processor_user(request):
+def auth_processor_perms(request):
+def auth_processor_perm_in_perms(request):
+def auth_processor_messages(request):
+def userpage(request):
+def permission_required_redirect(request):
+def permission_required_exception(request):
+def login_and_permission_required_exception(request):
+def normal_view(request):
+def template_response(request):
+def server_error(request):
+def permission_denied(request):
+def exception_in_render(request):
+def empty_view(request, *args, **kwargs):
+def wsgi_app(environ, start_response):
+def wsgi_app_file_wrapper(environ, start_response):
+def send_big_data_app(environ, start_response):
+def request_processor(request):
+def debug_processor(request):
+def override_database_connection_timezone(timezone):
+def example_view(request):
+def streaming_example_view(request):
+def model_view(request):
+def create_model_instance(request):
+def environ_view(request):
+def subview(request):
+def subview_calling_view(request):
+def check_model_instance_from_subview(request):
+def method_view(request):
+def change_cwd(directory):
+def hello(request):
+def hello_meta(request):
+def truncate_to(value, kind, tzinfo=None):
+def callable_default():
+def choice_default():
+def choice_default_list():
+def int_default():
+def int_list_default():
+def fix_os_paths(x):
+def get_img_path(path):
+def cxOracle_py3_bug(func):
+def build_tbody_html(pk, href, extra_fields):
+def xview(request):
+def get_person(request, pk):
+def no_template_used(request):
+def empty_response(request):
+def get_connection():
+def index(request):
+def last_modified_view1(request):
+def last_modified_view2(request):
+def etag_view1(request):
+def etag_view2(request):
+def etag_view_unquoted(request):
+def etag_view_weak(request):
+def etag_view_none(request):
+def standalone_number():
+def copytree(src, dst):
+def patch_formats(lang, **settings):
+def update_translation_catalogs():
+def regular(request):
+def no_response(request):
+def streaming(request):
+def in_transaction(request):
+def not_in_transaction(request):
+def suspicious(request):
+def malformed_post(request):
+def httpstatus_enum(request):
+def empty_middleware(get_response):
+def template_response_error_handler(request, exception=None):
+def permission_denied_view(request):
+def today_callable_dict():
+def today_callable_q():
+def link_posted_default():
+def secure_view(request):
+def secure_view2(request):
+def get_perm(Model, codename):
+def callable_year(dt_value):
+def external_mail(modeladmin, request, selected):
+def redirect_to(modeladmin, request, selected):
+def download(modeladmin, request, selected):
+def no_perm(modeladmin, request, selected):
+def admin_ordered_callable(obj):
+def callable_on_unknown(obj):
+def empty_view(request, *args, **kwargs):
