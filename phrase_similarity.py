@@ -6,8 +6,8 @@ import json
 from scipy import spatial
 
 #for now
-data = [{'repo_url':'url1','file_url':'url01','line_num':1, 'content':'def addOneT()'},
-    {'repo_url':'url2','file_url':'url02','line_num':2, 'content':'def changeName()'}
+data = [{'repo_url':'url1','file_url':'url01','line_num':1, 'content':'def add_one_t\(\)'},
+    {'repo_url':'url2','file_url':'url02','line_num':2, 'content':'def changeName\(\)'}
 ]
 
 model = gensim.models.KeyedVectors.load_word2vec_format('./GoogleNews-vectors-negative300.bin', binary=True, limit=500000)
@@ -156,7 +156,9 @@ def extractName(regex):
     while True:
         name+=regex[i]
         i+=1
-        if(not regex[i].isalpha() and not regex[i].isnumeric()):
+        if(i>=len(regex)):
+            break
+        if(i<len(regex) and not regex[i].isalpha() and not regex[i].isnumeric()):
             break
     after = regex[i:]
     return before, name, after
@@ -184,7 +186,7 @@ def lookup(regex):
         return regex
 
     #fast search
-    fast_regex = ""
+    fast_regex = regex
     found = False
     r_before,r_def,r_after = extractName(regex)
     r = make_sentence(make_list(r_def))
@@ -196,11 +198,11 @@ def lookup(regex):
             fast_regex += '|('+d_before+d_def+d_after+')'
             found = True
     if(found):
-        return fast_regex[1:]
+        return fast_regex
 
     #look for the synonyms
     r = replaceFunctionNames(regex)
     return r
 
-print(lookup('somestuff def addOne\(\): func'))
+#print(lookup('somestuff def addOne\(\): func'))
 #print(replaceFunctionNames('somestuff def addOne\(\): func'))
