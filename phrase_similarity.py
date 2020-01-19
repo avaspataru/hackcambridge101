@@ -104,11 +104,13 @@ def find_synonyms(word):
     #print(json.loads(r.content))
     #synonym_list = json.loads(r.content)['synonyms']
 
-    r = requests.get('https://words.bighugelabs.com/api/2//'+word+'/json')
+    r = requests.get('https://words.bighugelabs.com/api/2/3d61b2dab0e22df66fd693006de7a367/'+word+'/json')
+
     j = json.loads(r.content)
     synonym_list = []
     for (key,val) in j.items():
-        synonym_list += val['syn']
+        if('syn' in val.keys()):
+            synonym_list += val['syn']
     #synonym_list = j['noun']['syn'] + j['verb']['syn']
 
     for s in synonym_list:
@@ -124,7 +126,6 @@ def find_synonyms(word):
     s_list.sort(key = lambda synonym: synonym[1] )
     firsts = [t[0] for t in s_list]
     return firsts[-3:]
-
 
 def getReplacementsName(name):
     #for each word in the name, get the replacements
@@ -160,7 +161,7 @@ def extractName(regex):
         i+=1
         if(i>=len(regex)):
             break
-        if(i<len(regex) and not regex[i].isalpha() and not regex[i].isnumeric()):
+        if(i<len(regex) and not regex[i].isalpha() and not regex[i].isnumeric() and not regex[i]=='_'):
             break
     after = regex[i:]
     return before, name, after
@@ -176,7 +177,6 @@ def replaceFunctionNames(regex):
     for n in names:
         r = before + n
         r = r + after
-        print(r)
         final_regex += '|('+r+')'
     return final_regex
 
@@ -198,18 +198,22 @@ def lookup(regex):
     r = make_sentence(make_list(r_def))
     for d in data:
         d_before,d_def,d_after = extractName(d)
-        score = similarity_sentences(make_sentence(make_list(d_def)),r)
-        #print(d_def,score)
+        d_s = make_sentence(make_list(d_def))
+        score = similarity_sentences(d_s,r)
+        #print(r, d_s,score,d)
         if(score > 0.7):
             fast_regex += '|('+d_before+d_def+d_after+')'
             found = True
-    if(found):
-        return fast_regex
-
+    #if(not found):
+    #    print("Nothing good and fast")
+    #else:
+    #    print("GOOD:",fast_regex)
     #look for the synonyms
-    r = replaceFunctionNames(regex)
+    r = replaceFunctionNames(regex) + '|'+fast_regex
     return r
 
+#print(extractName("def delete_selected"))
+print(lookup('def removeSelected'))
 #print(lookup('somestuff def base64ToInt\([a-z]*\): func'))
 #print(lookup('somestuff def checkErr: func'))
 #print(lookup('somestuff def add_one[a-z]*: func'))
