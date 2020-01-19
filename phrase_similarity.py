@@ -1,4 +1,4 @@
-
+import re
 import numpy as np
 import gensim
 import requests
@@ -189,6 +189,10 @@ def lookup(regex):
     fast_regex = regex
     found = False
     r_before,r_def,r_after = extractName(regex)
+
+    if not re.match(r'^[A-Za-z0-9_]+$', r_def):
+        return regex
+
     r = make_sentence(make_list(r_def))
     for d in data:
         d_before,d_def,d_after = extractName(d['content'])
@@ -205,4 +209,6 @@ def lookup(regex):
     return r
 
 #print(lookup('somestuff def addOne\(\): func'))
+#print(lookup('somestuff def [a-z]*: func'))
+#print(lookup('somestuff def add_one: func'))
 #print(replaceFunctionNames('somestuff def addOne\(\): func'))
